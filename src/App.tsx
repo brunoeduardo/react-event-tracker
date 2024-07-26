@@ -2,7 +2,6 @@ import { useState } from 'react';
 import style from './App.module.scss';
 import Card from './components/Card';
 import Formulario from './components/Formulario';
-import { IEvento } from './interfaces/IEvento';
 import Calendario from './components/Calendario';
 import ListaDeEventos from './components/ListaDeEventos';
 import { RecoilRoot } from 'recoil';
@@ -29,13 +28,13 @@ function App() {
 
   const [filtro, setFiltro] = useState<Date | null>()
 
-  const adicionarEvento = (evento: IEvento) => {
-    // evento.id = Math.round((new Date()).getTime() / 1000)
-    // eventos.push(evento)
-    // console.log(eventos);
+  // const adicionarEvento = (evento: IEvento) => {
+  // evento.id = Math.round((new Date()).getTime() / 1000)
+  // eventos.push(evento)
+  // console.log(eventos);
 
-    // setEventos([...eventos])
-  }
+  // setEventos([...eventos])
+  // }
   // const alterarStatusEvento = (id: number) => {
   //   // const evento = eventos.find(evento => evento.id === id)
   //   // if (evento) {
@@ -59,7 +58,7 @@ function App() {
       <div className={style.App}>
         <div className={style.Coluna}>
           <Card>
-            <Formulario aoSalvar={adicionarEvento} />
+            <Formulario />
           </Card>
           <hr />
           <Card>
