@@ -38,17 +38,17 @@ const Calendario: React.FC = () => {
 
   const onEventDragFinish: OnEventDragFinish = (prevEvent: CalendarEvent, updatedEvent: CalendarEvent, events: any) => {
     const indexUpdated = eventos.findIndex((item: IEvento) => item.id === updatedEvent.id)
-    const elementoAtualizado = { ...eventos[indexUpdated] }
 
-    console.log("updatedEvent => ", updatedEvent)
-    console.log("eventos => ", eventos)
-    console.log("indexUpdated => ", eventos[indexUpdated])
-
+    const elementoAtualizado: IEvento = { ...eventos[indexUpdated] }
     elementoAtualizado.inicio = new Date(updatedEvent.startAt)
     elementoAtualizado.fim = new Date(updatedEvent.endAt)
-    console.log("elementoAtualizado =>", elementoAtualizado)
+    elementoAtualizado.id = updatedEvent.id
+    elementoAtualizado.descricao = updatedEvent.summary
+
     atualizarEvento(elementoAtualizado)
   }
+
+
   return (
     <div className={style.Container}>
       <Kalend
